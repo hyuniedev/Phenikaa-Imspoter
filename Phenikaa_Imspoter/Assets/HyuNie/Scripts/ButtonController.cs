@@ -11,7 +11,7 @@ public class ButtonController : MonoBehaviour
     }
     public void CloseDoor()
     {
-        FindObjectOfType<Aite>().GetComponent<Aite>().OnInit();
+        FindObjectOfType<Aite>().GetComponent<Aite>().GoOut();
         OpenTaskbar();
     }
     public void OpenTaskbar()

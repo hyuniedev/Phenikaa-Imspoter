@@ -19,6 +19,13 @@ public class Aite : MonoBehaviour
                 OnInit();
             }
         }
+        else
+        {
+            if (transform.position == GameController.Instance.getTransform(0).position)
+            {
+                OnInit();
+            }
+        }
     }
     public void OnInit()
     {
@@ -27,5 +34,9 @@ public class Aite : MonoBehaviour
         transform.position = GameController.Instance.getTransform(0).position;
         GameController.Instance.isOpenDoor = false;
         target = GameController.Instance.getTransform(1);
+    }
+    public void GoOut()
+    {
+        target = GameController.Instance.getTransform(0);
     }
 }
