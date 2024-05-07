@@ -16,8 +16,10 @@ public class Btn_floor : MonoBehaviour
     {
         
     }
-    public void On_Off_Infor(){
-        floor_inf.SetActive(!floor_inf.activeSelf);
+    public void On_Infor(){
+        floor_inf.SetActive(true);
     }
-    
+    public void Off_Infor(){
+        floor_inf.SetActive(false);
+    }
 }
