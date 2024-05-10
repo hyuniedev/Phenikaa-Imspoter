@@ -11,8 +11,10 @@ public class Aite : InforPeople
     }
     private void Update()
     {
+
         transform.position = Vector3.MoveTowards(transform.position, target.position, 2.5f * Time.deltaTime);
-        CheckPerPosition();
+        if (!GameController.Instance.isCompleteDay || (!targetNotIsOne() && GameController.Instance.isCompleteDay))
+            CheckPerPosition();
     }
     private void CheckPerPosition()
     {
@@ -57,5 +59,9 @@ public class Aite : InforPeople
     public void offActiveCardID()
     {
         CardID.SetActive(false);
+    }
+    public bool targetNotIsOne()
+    {
+        return !(target.position == GameController.Instance.getTransform(1).position);
     }
 }

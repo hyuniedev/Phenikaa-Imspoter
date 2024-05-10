@@ -42,4 +42,9 @@ public class ButtonController : MonoBehaviour
             ChyuuiCard.GetComponent<Animator>().Play("ChyuuiCard");
         }
     }
+    public void replay_nextDay()
+    {
+        gameObject.GetComponent<TimeGameplay>().resetTime();
+        GameController.Instance.Begin_Or_End_Day();
+    }
 }
