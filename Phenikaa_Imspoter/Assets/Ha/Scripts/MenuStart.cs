@@ -7,11 +7,11 @@ public class MenuStart : MonoBehaviour
 {
     public void PlayStory()
     {
-        SceneManager.LoadScene("StoryScreen");
+        SceneManager.LoadScene("HyuNie/Scenes/HyuNieScene");
     }
     public void PlayEndless()
     {
-        SceneManager.LoadScene("EndlessScreen");
+        SceneManager.LoadScene("EndlessScene");
     }
     public void QuitGame()
     {

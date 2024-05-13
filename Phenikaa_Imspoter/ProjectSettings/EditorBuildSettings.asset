@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/OanhChap/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/HyuNie/Scenes/HyuNieScene.unity
+    guid: 097a150994cf66f43bd9e142dbf046ec
   m_configObjects: {}
