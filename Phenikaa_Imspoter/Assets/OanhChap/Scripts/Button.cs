@@ -20,7 +20,7 @@ public class Button : MonoBehaviour
         
     }
     public void ClickNumber(int num){
-        if(textnumber.text.Length <4){
+        if(textnumber.text.Length <3){
             textnumber.text += num.ToString();
         }
         
@@ -38,6 +38,6 @@ public class Button : MonoBehaviour
         textnumber.text = "";
     }
     public void Call(){
-        
+        SoundController.Instance.CallNumber(textnumber.text);
     }
 }
