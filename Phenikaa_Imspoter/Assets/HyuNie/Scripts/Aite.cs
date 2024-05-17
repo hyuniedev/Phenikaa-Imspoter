@@ -11,10 +11,10 @@ public class Aite : InforPeople
     }
     private void Update()
     {
-
-        transform.position = Vector3.MoveTowards(transform.position, target.position, 2.5f * Time.deltaTime);
         if (!GameController.Instance.isCompleteDay || (!targetNotIsOne() && GameController.Instance.isCompleteDay))
             CheckPerPosition();
+        transform.position = Vector3.MoveTowards(transform.position, target.position, 2.5f * Time.deltaTime);
+
     }
     private void CheckPerPosition()
     {
@@ -40,11 +40,16 @@ public class Aite : InforPeople
     }
     private void ShowCard()
     {
-        CardID.SetActive(true);
-        CardID.GetComponent<Animator>().Play("animCardID");
+        if (target != GameController.Instance.getTransform(0))
+        {
+            CardID.SetActive(true);
+            CardID.GetComponent<Animator>().Play("animCardID");
+        }
     }
     public void OnInit()
     {
+        Debug.Log(this.ToString());
+        CardID.GetComponent<Animator>().enabled = true;
         ReadData.Instance.getData(this);
         Debug.Log("eObject: " + eObject);
         transform.position = GameController.Instance.getTransform(0).position;

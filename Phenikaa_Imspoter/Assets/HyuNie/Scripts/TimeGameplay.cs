@@ -5,15 +5,15 @@ using UnityEngine.UI;
 public class TimeGameplay : MonoBehaviour
 {
     [SerializeField] Text txtTime;
-    private float speedTime = 2;
+    private float speedTime = 5;
     private float h, m;
     private float HourEnd, MinuteEnd;
     private void Start()
     {
         h = 9;
         m = 0;
-        HourEnd = 12;
-        MinuteEnd = 30;
+        HourEnd = 11;
+        MinuteEnd = 0;
     }
     void Update()
     {
