@@ -13,14 +13,11 @@ public class ReadData : MonoBehaviour
         }
     }
     private static int lineIndex;
-    private string PATH_DATA = Application.dataPath + "/Data/data.csv";
+    private string PATH_DATA = Application.dataPath + "/Data/GDD-Phenikaa-Imposter-Data.csv";
     private string[] datas;
     private void Awake()
     {
         instance = this;
-    }
-    private void Start()
-    {
         lineIndex = 1;
         Debug.Log(PATH_DATA);
         if (!File.Exists(PATH_DATA))
@@ -35,9 +32,20 @@ public class ReadData : MonoBehaviour
         if (line.Length > 0)
         {
             string[] data = line.Split(",");
-            inforPeople.ID = long.Parse(data[0]);
-            inforPeople.eObject = data[1].Equals("TRUE") ? EObject.Bot : randomEObject();
-            inforPeople.Name = data[2];
+            inforPeople.index = int.Parse(data[0]);
+            inforPeople.Name = data[1];
+            inforPeople.eObject = data[2].Equals("TRUE") ? EObject.Bot : randomEObject();
+            inforPeople.ID = long.Parse(data[3]);
+            inforPeople.giayTo.TSV = data[4].Equals("TRUE") ? true : false;
+            inforPeople.giayTo.CCCD = data[5].Equals("TRUE") ? true : false;
+            inforPeople.giayTo.giayDKVaoTruong = data[6].Equals("TRUE") ? true : false;
+            inforPeople.giayTo.veThamGiaSinhHoat = data[7].Equals("TRUE") ? true : false;
+            inforPeople.giayTo.veThamGiaQuanSu = data[8].Equals("TRUE") ? true : false;
+            inforPeople.giayTo.giayPhepLamViec = data[9].Equals("TRUE") ? true : false;
+            inforPeople.giayTo.veThamGiaHoiThao = data[10].Equals("TRUE") ? true : false;
+            inforPeople.giayTo.theGiaoVien = data[11].Equals("TRUE") ? true : false;
+            inforPeople.giayTo.phieuDuThi = data[12].Equals("TRUE") ? true : false;
+            inforPeople.giayTo.giayDinhDangBoSung = data[13].Equals("TRUE") ? true : false;
         }
         else
         {
