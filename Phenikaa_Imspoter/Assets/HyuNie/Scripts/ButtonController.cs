@@ -34,9 +34,9 @@ public class ButtonController : MonoBehaviour
     }
     private void CheckAite(EObject checkEOBJ)
     {
-        if (aite.eObject == EObject.Bot)
+        if (aite.role == EObject.Bot)
             return;
-        if (aite.eObject != checkEOBJ)
+        if (aite.role != checkEOBJ)
         {
             ChyuuiCard.SetActive(true);
             ChyuuiCard.GetComponent<Animator>().Play("ChyuuiCard");

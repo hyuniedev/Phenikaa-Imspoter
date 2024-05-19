@@ -16,7 +16,7 @@ public struct Identifications
 }
 public class InforPeople : MonoBehaviour
 {
-    public EObject eObject { get; set; }
+    public EObject role { get; set; }
     public int index { get; set; }
     public long ID { get; set; }
     public string Name { get; set; }
