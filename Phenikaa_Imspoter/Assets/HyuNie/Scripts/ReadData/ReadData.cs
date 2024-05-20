@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -13,7 +14,7 @@ public class ReadData : MonoBehaviour
         }
     }
     private static int lineIndex;
-    private string PATH_DATA = Application.dataPath + "/Data/GDD-Phenikaa-Imposter-Data.csv";
+    private string PATH_DATA = Application.dataPath + "/Data/GDD-Phenikaa-Imposter-Data-1.csv";
     private string[] datas;
     private void Awake()
     {
@@ -34,8 +35,8 @@ public class ReadData : MonoBehaviour
             string[] data = line.Split(",");
             inforPeople.index = int.Parse(data[0]);
             inforPeople.Name = data[1];
-            inforPeople.eObject = data[2].Equals("TRUE") ? EObject.Bot : randomEObject();
-            inforPeople.ID = long.Parse(data[3]);
+            inforPeople.ID = long.Parse(data[2]);
+            inforPeople.role = data[3].Trim().Equals("Special") ? EObject.Bot : (data[3].Trim().Equals("Human") ? EObject.Human : EObject.Grost);
             inforPeople.giayTo.TSV = data[4].Equals("TRUE") ? true : false;
             inforPeople.giayTo.CCCD = data[5].Equals("TRUE") ? true : false;
             inforPeople.giayTo.giayDKVaoTruong = data[6].Equals("TRUE") ? true : false;
@@ -46,17 +47,14 @@ public class ReadData : MonoBehaviour
             inforPeople.giayTo.theGiaoVien = data[11].Equals("TRUE") ? true : false;
             inforPeople.giayTo.phieuDuThi = data[12].Equals("TRUE") ? true : false;
             inforPeople.giayTo.giayDinhDangBoSung = data[13].Equals("TRUE") ? true : false;
+            // Debug.Log(inforPeople.ToString());
         }
         else
         {
             inforPeople.Name = "Het Data";
             inforPeople.ID = 123456789;
-            inforPeople.eObject = EObject.Grost;
+            inforPeople.role = EObject.Grost;
         }
         lineIndex++;
-    }
-    private EObject randomEObject()
-    {
-        return Random.Range(0, 2) == 0 ? EObject.Human : EObject.Grost;
     }
 }

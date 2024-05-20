@@ -1,5 +1,4 @@
 using UnityEngine;
-using Random = UnityEngine.Random;
 public class Aite : InforPeople
 {
     [SerializeField] private GameObject CardID;
@@ -28,7 +27,7 @@ public class Aite : InforPeople
         }
         else
         {
-            if (transform.position == GameController.Instance.getTransform(0).position)
+            if (transform.position == GameController.Instance.getTransform(0).position && target.position == GameController.Instance.getTransform(0).position)
             {
                 OnInit();
             }
@@ -48,7 +47,6 @@ public class Aite : InforPeople
     }
     public void OnInit()
     {
-        Debug.Log(this.ToString());
         CardID.GetComponent<Animator>().enabled = true;
         ReadData.Instance.getData(this);
         Debug.Log("eObject: " + role);
