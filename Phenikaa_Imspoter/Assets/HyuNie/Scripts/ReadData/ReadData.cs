@@ -14,7 +14,7 @@ public class ReadData : MonoBehaviour
         }
     }
     private static int lineIndex;
-    private string PATH_DATA = Application.dataPath + "/Data/GDD-Phenikaa-Imposter-Data-1.csv";
+    private string PATH_DATA = Application.dataPath + "/Data/GDD-Phenikaa-Imposter-Data.csv";
     private string[] datas;
     private void Awake()
     {

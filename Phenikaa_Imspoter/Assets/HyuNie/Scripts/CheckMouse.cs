@@ -18,10 +18,12 @@ public class CheckMouse : MonoBehaviour
         Vector2 posYellow = GameController.Instance.getPointMouse("Yellow");
         if (posMouse.x > posYellow.x && posMouse.y < posYellow.y)
         {
+            target.gameObject.GetComponent<SpriteRenderer>().sprite = GameController.Instance.GetSprite(target.name);
             target.gameObject.transform.localScale = new Vector2(2, 2);
         }
         else
         {
+            target.gameObject.GetComponent<SpriteRenderer>().sprite = GameController.Instance.GetSprite("Default");
             target.gameObject.transform.localScale = new Vector2(1, 1);
         }
     }

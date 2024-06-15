@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     private Aite aite;
     [SerializeField] private Transform[] transforms;
     [SerializeField] private Transform[] pointsMouse;
+    [SerializeField] private Sprite[] sprites;
     private Dictionary<string, Vector2> dicPointsMouse = new Dictionary<string, Vector2>();
     private void Awake()
     {
@@ -51,6 +52,18 @@ public class GameController : MonoBehaviour
         else
         {
             EndDay.GetComponent<Animator>().Play("on");
+        }
+    }
+    public Sprite GetSprite(string nameCard)
+    {
+        switch (nameCard)
+        {
+            case "Chuui":
+                return sprites[1];
+            case "TSV":
+                return sprites[2];
+            default:
+                return sprites[0];
         }
     }
 }

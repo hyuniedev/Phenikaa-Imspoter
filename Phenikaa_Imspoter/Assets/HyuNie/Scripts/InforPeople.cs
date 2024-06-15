@@ -23,7 +23,7 @@ public class InforPeople : MonoBehaviour
     public Identifications giayTo;
     public override string ToString()
     {
-        String s = index + " " + Name + " " + ID + role + " " + giayTo.TSV + " " +
+        String s = index + " " + Name + " " + ID + " " + role + " " + giayTo.TSV + " " +
         giayTo.CCCD + " " + giayTo.giayDKVaoTruong + " " +
         giayTo.veThamGiaSinhHoat + " " + giayTo.veThamGiaQuanSu + " " + giayTo.giayPhepLamViec + " " +
         giayTo.veThamGiaHoiThao + " " + giayTo.theGiaoVien + " " + giayTo.phieuDuThi + " " +
