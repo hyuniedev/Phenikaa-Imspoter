@@ -13,21 +13,28 @@ public struct Identifications
     public bool theGiaoVien;
     public bool phieuDuThi;
     public bool giayDinhDangBoSung;
+    public override string ToString()
+    {
+        return $"TSV: {TSV}, CCCD: {CCCD}, giayDKVaoTruong: {giayDKVaoTruong}, " +
+               $"veThamGiaSinhHoat: {veThamGiaSinhHoat}, veThamGiaQuanSu: {veThamGiaQuanSu}, " +
+               $"giayPhepLamViec: {giayPhepLamViec}, veThamGiaHoiThao: {veThamGiaHoiThao}, " +
+               $"theGiaoVien: {theGiaoVien}, phieuDuThi: {phieuDuThi}, giayDinhDangBoSung: {giayDinhDangBoSung}";
+    }
 }
 public class InforPeople : MonoBehaviour
 {
     public EObject role { get; set; }
-    public int index { get; set; }
     public long ID { get; set; }
     public string Name { get; set; }
+    public string Khoa { get; set; }
+    public string Nganh { get; set; }
+    public string GioiTinh { get; set; }
+    public string DiaChi { get; set; }
+    public string dob { get; set; }
     public Identifications giayTo;
     public override string ToString()
     {
-        String s = index + " " + Name + " " + ID + " " + role + " " + giayTo.TSV + " " +
-        giayTo.CCCD + " " + giayTo.giayDKVaoTruong + " " +
-        giayTo.veThamGiaSinhHoat + " " + giayTo.veThamGiaQuanSu + " " + giayTo.giayPhepLamViec + " " +
-        giayTo.veThamGiaHoiThao + " " + giayTo.theGiaoVien + " " + giayTo.phieuDuThi + " " +
-        giayTo.giayDinhDangBoSung;
-        return s;
+        return $"Role: {role}, ID: {ID}, Name: {Name}, Khoa: {Khoa}, Nganh: {Nganh}, " +
+               $"GioiTinh: {GioiTinh}, DiaChi: {DiaChi}, DOB: {dob}, GiayTo: {giayTo}";
     }
 }
