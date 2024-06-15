@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class TimeGameplay : MonoBehaviour
 {
     [SerializeField] Text txtTime;
-    private float speedTime = 5;
+    private float speedTime = 2;
     private float h, m;
     private float HourEnd, MinuteEnd;
     private void Start()
