@@ -49,7 +49,7 @@ public class Aite : InforPeople
     {
         CardID.GetComponent<Animator>().enabled = true;
         ReadData.Instance.getData(this);
-        Debug.Log("eObject: " + role);
+        Debug.Log(ToString());
         transform.position = GameController.Instance.getTransform(0).position;
         GameController.Instance.isOpenDoor = false;
         target = GameController.Instance.getTransform(1);
